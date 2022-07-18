@@ -74,7 +74,6 @@ class App extends React.Component{
         isSubmitted : false
       })
     }
-    console.log(this.state);
   }
 
   handleFirstNameChange = e =>{
