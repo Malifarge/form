@@ -4,8 +4,8 @@ import './style/global.css'
 
 
 const regex = /^[\w\.]+@([\w-]+\.)+[\w-]{2,4}$/
-let myborderMail = "2px solid red"
-let myborderPassword = "2px solid red"
+let mymail
+let mypassword
 
 class App extends React.Component{
 
@@ -25,35 +25,42 @@ class App extends React.Component{
   }
 
   handleEmailChange = e =>{
+    mymail = document.getElementById("exampleInputEmail1")
     const mailTest = regex.test(e.target.value)
     if (mailTest){
       this.setState({
         email: e.target.value,
         emailIsValid: true
       })
-      myborderMail= "2px solid green"
+      mymail.classList.remove("is-invalid")
+      mymail.classList.add("is-valid")
+
     }else {
       this.setState({
         email: "",
         emailIsValid: false
       })
-      myborderMail= "2px solid red"
+      mymail.classList.remove("is-valid")
+      mymail.classList.add("is-invalid")
     }
   }
 
   handlePasswordChange = e =>{
+    mypassword=document.getElementById("exampleInputPassword1")
     if (e.target.value.length>5){
       this.setState({
         password: e.target.value,
         passwordIsValid: true
       })
-      myborderPassword = "2px solid green"
+      mypassword.classList.remove("is-invalid")
+      mypassword.classList.add("is-valid")
     }else {
       this.setState({
         password: "",
         passwordIsValid: false
       })
-      myborderPassword = "2px solid red"
+      mypassword.classList.remove("is-valid")
+      mypassword.classList.add("is-invalid")
     }
   }
 
@@ -94,7 +101,7 @@ class App extends React.Component{
       
           <section>
             <h1>Login</h1>
-            {this.state.isSubmitted ? <p>Welcom <span>{this.state.firstName} {this.state.lastName}</span> </p> : <Form mailChange={this.handleEmailChange} passwordChange={this.handlePasswordChange} checkChange={this.handleRememberMeChange} submit={this.handleSubmit} firstName={this.handleFirstNameChange} lastName={this.handleLastNameChange} myborderMail={myborderMail} myborderPassword={myborderPassword}/>}
+            {this.state.isSubmitted ? <p>Welcom <span>{this.state.firstName} {this.state.lastName}</span> </p> : <Form mailChange={this.handleEmailChange} passwordChange={this.handlePasswordChange} checkChange={this.handleRememberMeChange} submit={this.handleSubmit} firstName={this.handleFirstNameChange} lastName={this.handleLastNameChange}/>}
           </section>
 
     )
