@@ -9,7 +9,7 @@ class Form extends React.Component{
             
             {/* Firstname Name */}
 
-            <div className="form-row">
+            <div className="row">
 
               {/* Firstname */}
 
