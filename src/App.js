@@ -1,7 +1,11 @@
 import React from "react";
-import Form from "./Form";
+import Form from "./components/Form";
+import './style/global.css'
+
 
 const regex = /^[\w\.]+@([\w-]+\.)+[\w-]{2,4}$/
+let myborderMail = "2px solid red"
+let myborderPassword = "2px solid red"
 
 class App extends React.Component{
 
@@ -27,11 +31,13 @@ class App extends React.Component{
         email: e.target.value,
         emailIsValid: true
       })
+      myborderMail= "2px solid green"
     }else {
       this.setState({
         email: "",
         emailIsValid: false
       })
+      myborderMail= "2px solid red"
     }
   }
 
@@ -41,11 +47,13 @@ class App extends React.Component{
         password: e.target.value,
         passwordIsValid: true
       })
+      myborderPassword = "2px solid green"
     }else {
       this.setState({
         password: "",
         passwordIsValid: false
       })
+      myborderPassword = "2px solid red"
     }
   }
 
@@ -87,7 +95,7 @@ class App extends React.Component{
       
           <section>
             <h1>Login</h1>
-            {this.state.isSubmitted ? <p>Welcom {this.state.firstName} {this.state.lastName}</p> : <Form mailChange={this.handleEmailChange} passwordChange={this.handlePasswordChange} checkChange={this.handleRememberMeChange} submit={this.handleSubmit} firstName={this.handleFirstNameChange} lastName={this.handleLastNameChange}/>}
+            {this.state.isSubmitted ? <p>Welcom <span>{this.state.firstName} {this.state.lastName}</span> </p> : <Form mailChange={this.handleEmailChange} passwordChange={this.handlePasswordChange} checkChange={this.handleRememberMeChange} submit={this.handleSubmit} firstName={this.handleFirstNameChange} lastName={this.handleLastNameChange} myborderMail={myborderMail} myborderPassword={myborderPassword}/>}
           </section>
 
     )
