@@ -15,7 +15,7 @@ class Form extends React.Component{
 
 
                   <div className="col-md-6 mb-3">
-                    <label for="validationCustom01">First name</label>
+                    <label htmlFor="validationCustom01">First name</label>
                     <input type="text" className="form-control" id="validationCustom01" placeholder="First name..." required onChange={this.props.firstName}/>
                     <div className="valid-feedback">
                       Looks good!
@@ -25,7 +25,7 @@ class Form extends React.Component{
 
                   </div>
                   <div className="col-md-6 mb-3">
-                    <label for="validationCustom02">Last name</label>
+                    <label htmlFor="validationCustom02">Last name</label>
                     <input type="text" className="form-control" id="validationCustom02" placeholder="Last name..." required onChange={this.props.lastName}/>
                     <div className="valid-feedback">
                       Looks good!
@@ -36,7 +36,7 @@ class Form extends React.Component{
             {/* Mail */}
 
             <div className="form-group">
-              <label for="exampleInputEmail1">Email address</label>
+              <label htmlFor="exampleInputEmail1">Email address</label>
               <input type="email"  className="form-control is-invalid"  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email..." onChange={this.props.mailChange}/>
               <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
@@ -44,7 +44,7 @@ class Form extends React.Component{
             {/* Password */}
 
             <div className="form-group">
-              <label for="exampleInputPassword1">Password</label>
+              <label htmlFor="exampleInputPassword1">Password</label>
               <input type="password" className="form-control is-invalid"  id="exampleInputPassword1" placeholder="Enter Password..." onChange={this.props.passwordChange}/>
             </div>
 
@@ -53,7 +53,7 @@ class Form extends React.Component{
 
             <div className="form-check">
               <input type="checkbox" className="form-check-input" id="exampleCheck1" onChange={this.props.checkChange}/>
-              <label className="form-check-label" for="exampleCheck1">Remember me</label>
+              <label className="form-check-label" htmlFor="exampleCheck1">Remember me</label>
             </div>
 
             {/* Submit */}
